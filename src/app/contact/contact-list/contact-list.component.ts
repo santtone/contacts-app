@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Contact} from '../contact';
 
 @Component({
   selector: 'ca-contact-list',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor() { }
+  contacts: Contact[];
+
+  constructor() {
+    this.contacts = [
+      new Contact(1, 'Sami', 'Anttonen', '01234567', 'Skinnarilankatu 35', 'Lappeenranta'),
+      new Contact(2, 'Jouni', 'Könönen', '01234567', 'Skinnarilankatu 35', 'Lappeenranta')
+    ];
+  }
 
   ngOnInit() {
   }

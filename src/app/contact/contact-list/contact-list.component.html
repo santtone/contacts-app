@@ -1,3 +1,5 @@
-<p>
-  contact-list works!
-</p>
+<mat-nav-list>
+  <ca-contact-list-item *ngFor="let contact of contacts"
+                        [contact]="contact">
+  </ca-contact-list-item>
+</mat-nav-list>
