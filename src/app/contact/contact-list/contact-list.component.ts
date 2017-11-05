@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Contact} from '../contact';
+import {ContactService} from '../services/contact.service';
 
 @Component({
   selector: 'ca-contact-list',
@@ -10,14 +11,12 @@ export class ContactListComponent implements OnInit {
 
   contacts: Contact[];
 
-  constructor() {
-    this.contacts = [
-      new Contact(1, 'Sami', 'Anttonen', '01234567', 'Skinnarilankatu 35', 'Lappeenranta'),
-      new Contact(2, 'Jouni', 'Könönen', '01234567', 'Skinnarilankatu 35', 'Lappeenranta')
-    ];
+  constructor(private contactService: ContactService) {
+    this.contacts = [];
   }
 
   ngOnInit() {
+    this.contacts = this.contactService.findContacts();
   }
 
 }
