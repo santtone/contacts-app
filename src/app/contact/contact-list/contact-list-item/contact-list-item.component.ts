@@ -7,7 +7,7 @@ import {MatMenuTrigger} from '@angular/material';
   templateUrl: './contact-list-item.component.html',
   styleUrls: ['./contact-list-item.component.css']
 })
-export class ContactListItemComponent implements OnInit, AfterViewInit {
+export class ContactListItemComponent implements OnInit {
 
   @Input() contact: Contact;
   @ViewChild(MatMenuTrigger) menuTrigger: MatMenuTrigger;
@@ -18,10 +18,6 @@ export class ContactListItemComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-  }
-
-  ngAfterViewInit(): void {
-    console.log(this.menuTrigger);
   }
 
   onFocus() {
