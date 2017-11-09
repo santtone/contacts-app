@@ -1,7 +1,7 @@
 <mat-nav-list>
   <ca-contact-list-item *ngFor="let contact of contacts"
                         [contact]="contact"
-                        (click)="editContact(contact)">
+                        (select)="editContact(contact)">
   </ca-contact-list-item>
 </mat-nav-list>
 <button mat-fab (click)="addContact()" color="accent" class="ca-fab-action-button">
