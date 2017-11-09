@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Contact} from '../contact';
+import * as _ from 'lodash';
 
 @Injectable()
 export class ContactService {
@@ -13,6 +14,11 @@ export class ContactService {
 
   public findContacts(): Contact[] {
     return this.readLocalStorageContacts();
+  }
+
+  public findContactById(id: number): Contact {
+    const contacts = this.readLocalStorageContacts();
+    return _.find(contacts, {'id': id});
   }
 
   public saveContact(contact: Contact) {

@@ -1,1 +1,26 @@
-<ca-contact-list></ca-contact-list>
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav #sidenav mode="over" align="start" class="ca-sidenav">
+    <div fxLayout="column">
+      <div fxFlex="150px" fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="ca-sidenav-avatar" color="primary">account_circle</mat-icon>
+      </div>
+      Sami Anttonen
+      <div fxFlex fxLayout="row">
+
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>contacts-app</span>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>
+
+http://localhost:4200/contacts/1
+http://localhost:4200/add-contact
