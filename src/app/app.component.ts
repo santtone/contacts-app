@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {BreakpointObserver} from '@angular/cdk/layout';
+import {MatSidenav} from '@angular/material';
 
 @Component({
   selector: 'ca-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit {
+
+  smallScreenQuery = '(max-width: 599px)';
+  isSmallScreen: boolean;
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.isSmallScreen = breakpointObserver.isMatched(this.smallScreenQuery);
+  }
+
+  ngOnInit(): void {
+    this.breakpointObserver.observe([
+      '(max-width: 599px)'
+    ]).subscribe(result => {
+      this.isSmallScreen = result.matches;
+      this.toggleSidenav();
+    });
+  }
+
+  toggleSidenav() {
+    if (this.sidenav) {
+      this.sidenav.toggle();
+    }
+  }
 }
