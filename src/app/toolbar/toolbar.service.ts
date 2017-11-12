@@ -14,8 +14,10 @@ export class ToolbarService {
 
 export class ToolbarSettings {
   title: string;
+  backEnabled: boolean;
 
-  constructor(title?: string) {
+  constructor(title?: string, backEnabled?: boolean) {
     this.title = title;
+    this.backEnabled = backEnabled;
   }
 }

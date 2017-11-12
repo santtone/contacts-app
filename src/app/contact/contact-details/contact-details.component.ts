@@ -21,7 +21,7 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.toolbar.toolbarSettings.next(new ToolbarSettings('Contact Details'));
+    this.toolbar.toolbarSettings.next(new ToolbarSettings('Contact Details', true));
 
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {

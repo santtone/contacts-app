@@ -1,6 +1,9 @@
 <mat-toolbar color="primary" class="mat-elevation-z5">
-  <button mat-icon-button (click)="toggleSidenav.emit()">
+  <button *ngIf="!settings.backEnabled" mat-icon-button (click)="toggleSidenav.emit()">
     <mat-icon>menu</mat-icon>
+  </button>
+  <button *ngIf="settings.backEnabled" mat-icon-button (click)="navigateBack()">
+    <mat-icon>arrow_back</mat-icon>
   </button>
   <span>{{settings.title}}</span>
 </mat-toolbar>

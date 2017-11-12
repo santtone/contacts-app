@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Location} from '@angular/common';
 import {ToolbarService, ToolbarSettings} from './toolbar.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ToolbarComponent implements OnInit {
   @Output() toggleSidenav: EventEmitter<any>;
   settings: ToolbarSettings;
 
-  constructor(private toolbarService: ToolbarService) {
+  constructor(private toolbarService: ToolbarService, private location: Location) {
     this.toggleSidenav = new EventEmitter();
     this.settings = new ToolbarSettings();
   }
@@ -20,6 +21,10 @@ export class ToolbarComponent implements OnInit {
     this.toolbarService.toolbarSettings.subscribe((settings: ToolbarSettings) => {
       this.settings = settings;
     });
+  }
+
+  navigateBack() {
+    this.location.back();
   }
 
 }
