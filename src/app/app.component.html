@@ -18,20 +18,28 @@
       <mat-divider></mat-divider>
       <div fxFlex fxLayout="row">
         <mat-nav-list fxFlexFill>
-          <mat-list-item>Action 1</mat-list-item>
-          <mat-list-item>Action 2</mat-list-item>
+          <a mat-list-item (click)="click">
+            <mat-icon>contacts</mat-icon>
+            Customers
+          </a>
+          <a mat-list-item (click)="click">
+            <mat-icon>settings</mat-icon>
+            Settings
+          </a>
         </mat-nav-list>
       </div>
     </div>
   </mat-sidenav>
 
-  <mat-toolbar color="primary" class="mat-elevation-z5">
-    <button mat-icon-button (click)="toggleSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>contacts-app</span>
-  </mat-toolbar>
-  <div class="ca-app-container">
-    <router-outlet></router-outlet>
+  <div fxLayout="column" fxLayoutAlign="start stretch" fxFlexFill>
+    <mat-toolbar color="primary" class="mat-elevation-z5">
+      <button mat-icon-button (click)="toggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>contacts-app</span>
+    </mat-toolbar>
+    <div class="ca-app-container">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </mat-sidenav-container>

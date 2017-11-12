@@ -10,6 +10,7 @@ import {ContactDetailsComponent} from './contact/contact-details/contact-details
 import {RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
+import { CovalentLayoutModule } from '@covalent/core';
 import {caRoutes} from './config/route-config';
 
 @NgModule({
@@ -24,7 +25,8 @@ import {caRoutes} from './config/route-config';
     RouterModule.forRoot(caRoutes),
     MaterialComponentsModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    CovalentLayoutModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

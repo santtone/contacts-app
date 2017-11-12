@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "ca",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/@covalent/core/common/platform.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

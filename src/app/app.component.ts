@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.breakpointObserver.observe([
-      '(max-width: 599px)'
+      this.smallScreenQuery
     ]).subscribe(result => {
       this.isSmallScreen = result.matches;
       this.toggleSidenav();

@@ -1,9 +1,11 @@
-<mat-nav-list>
-  <ca-contact-list-item *ngFor="let contact of contacts"
-                        [contact]="contact"
-                        (select)="editContact(contact)">
-  </ca-contact-list-item>
-</mat-nav-list>
-<button mat-fab (click)="addContact()" color="accent" class="ca-fab-action-button">
-  <mat-icon>add</mat-icon>
-</button>
+<td-layout-card-over cardWidth="80">
+  <mat-nav-list>
+    <ca-contact-list-item *ngFor="let contact of contacts"
+                          [contact]="contact"
+                          (select)="editContact(contact)">
+    </ca-contact-list-item>
+  </mat-nav-list>
+  <button mat-fab (click)="addContact()" color="accent" class="ca-floating-action-button">
+    <mat-icon>add</mat-icon>
+  </button>
+</td-layout-card-over>
