@@ -1,6 +1,7 @@
 import {Route} from '@angular/router';
 import {ContactListComponent} from '../contact/contact-list/contact-list.component';
 import {ContactDetailsComponent} from '../contact/contact-details/contact-details.component';
+import {SettingsComponent} from '../settings/settings.component';
 
 export const caRoutes: Route[] = [
   {
@@ -18,5 +19,9 @@ export const caRoutes: Route[] = [
   {
     path: 'add-contact',
     component: ContactDetailsComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
   }
 ];

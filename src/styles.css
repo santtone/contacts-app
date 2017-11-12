@@ -26,6 +26,11 @@ html, body {
   z-index: 2;
 }
 
+.ca-layout-card-content{
+  min-height: 400px;
+  padding: 24px;
+}
+
 .ca-padding {
   padding: 16px;
 }

@@ -37,4 +37,8 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/contacts']);
   }
 
+  navigateToSettings() {
+    this.router.navigate(['/settings']);
+  }
+
 }

@@ -1,11 +1,13 @@
 <td-layout-card-over cardWidth="80">
-  <mat-nav-list>
-    <ca-contact-list-item *ngFor="let contact of contacts"
-                          [contact]="contact"
-                          (select)="editContact(contact)">
-    </ca-contact-list-item>
-  </mat-nav-list>
-  <button mat-fab (click)="addContact()" color="accent" class="ca-floating-action-button">
-    <mat-icon>add</mat-icon>
-  </button>
+  <div class="ca-layout-card-content">
+    <mat-nav-list>
+      <ca-contact-list-item *ngFor="let contact of contacts"
+                            [contact]="contact"
+                            (select)="editContact(contact)">
+      </ca-contact-list-item>
+    </mat-nav-list>
+  </div>
 </td-layout-card-over>
+<button mat-fab (click)="addContact()" color="accent" class="ca-floating-action-button">
+  <mat-icon>add</mat-icon>
+</button>

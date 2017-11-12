@@ -14,6 +14,7 @@ import {CovalentLayoutModule} from '@covalent/core';
 import {caRoutes} from './config/route-config';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {ToolbarService} from './toolbar/toolbar.service';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ToolbarService} from './toolbar/toolbar.service';
     ContactListComponent,
     ContactListItemComponent,
     ContactDetailsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
