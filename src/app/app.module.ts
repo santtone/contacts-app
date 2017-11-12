@@ -15,6 +15,7 @@ import {caRoutes} from './config/route-config';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {ToolbarService} from './toolbar/toolbar.service';
 import { SettingsComponent } from './settings/settings.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SettingsComponent } from './settings/settings.component';
     ContactListItemComponent,
     ContactDetailsComponent,
     ToolbarComponent,
-    SettingsComponent
+    SettingsComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
