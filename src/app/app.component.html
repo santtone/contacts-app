@@ -18,9 +18,9 @@
       <mat-divider></mat-divider>
       <div fxFlex fxLayout="row">
         <mat-nav-list fxFlexFill>
-          <a mat-list-item (click)="click">
+          <a mat-list-item (click)="navigateToContacts()">
             <mat-icon>contacts</mat-icon>
-            Customers
+            Contacts
           </a>
           <a mat-list-item (click)="click">
             <mat-icon>settings</mat-icon>
@@ -32,12 +32,7 @@
   </mat-sidenav>
 
   <div fxLayout="column" fxLayoutAlign="start stretch" fxFlexFill>
-    <mat-toolbar color="primary" class="mat-elevation-z5">
-      <button mat-icon-button (click)="toggleSidenav()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>contacts-app</span>
-    </mat-toolbar>
+    <ca-toolbar (toggleSidenav)="toggleSidenav()"></ca-toolbar>
     <div class="ca-app-container">
       <router-outlet></router-outlet>
     </div>

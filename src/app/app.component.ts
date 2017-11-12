@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {MatSidenav} from '@angular/material';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ca-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
   isSmallScreen: boolean;
   @ViewChild('sidenav') sidenav: MatSidenav;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router) {
     this.isSmallScreen = breakpointObserver.isMatched(this.smallScreenQuery);
   }
 
@@ -31,4 +32,9 @@ export class AppComponent implements OnInit {
       this.sidenav.toggle();
     }
   }
+
+  navigateToContacts() {
+    this.router.navigate(['/contacts']);
+  }
+
 }

@@ -10,15 +10,18 @@ import {ContactDetailsComponent} from './contact/contact-details/contact-details
 import {RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
-import { CovalentLayoutModule } from '@covalent/core';
+import {CovalentLayoutModule} from '@covalent/core';
 import {caRoutes} from './config/route-config';
+import {ToolbarComponent} from './toolbar/toolbar.component';
+import {ToolbarService} from './toolbar/toolbar.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
     ContactListItemComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import {caRoutes} from './config/route-config';
     FormsModule,
     CovalentLayoutModule
   ],
-  providers: [ContactService],
+  providers: [ContactService, ToolbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
