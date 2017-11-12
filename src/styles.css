@@ -23,6 +23,7 @@ html, body {
   position: fixed !important;
   bottom: 26px;
   right: 30px;
+  z-index: 2;
 }
 
 .ca-padding {

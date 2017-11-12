@@ -22,9 +22,18 @@ export class ContactService {
   }
 
   public saveContact(contact: Contact) {
-    const contacts = this.readLocalStorageContacts();
-    contacts.push(contact);
+    let contacts = this.readLocalStorageContacts();
+    if (!contact.id) {
+      const lastSaved = _.maxBy(contacts, 'id') as Contact;
+      contact.id = lastSaved ? lastSaved.id + 1 : 1;
+      contacts.push(contact);
+    } else {
+      contacts = _.map(contacts, function (c: Contact) {
+        return c.id === contact.id ? contact : c;
+      });
+    }
     this.writeLocalStorageContacts(contacts);
+    return this.findContactById(contact.id);
   }
 
   private getInitialContacts(): Contact[] {
