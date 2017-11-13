@@ -26,6 +26,11 @@ export class ContactListComponent implements OnInit {
     this.router.navigate(['contacts', contact.id]);
   }
 
+  deleteContact(contact: Contact) {
+    this.contactService.deleteContact(contact.id);
+    this.contacts = this.contactService.findContacts();
+  }
+
   addContact() {
     this.router.navigate(['add-contact']);
   }

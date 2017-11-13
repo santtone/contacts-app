@@ -3,7 +3,8 @@
     <mat-nav-list>
       <ca-contact-list-item *ngFor="let contact of contacts"
                             [contact]="contact"
-                            (select)="editContact(contact)">
+                            (select)="editContact(contact)"
+                            (remove)="deleteContact(contact)">
       </ca-contact-list-item>
     </mat-nav-list>
   </div>

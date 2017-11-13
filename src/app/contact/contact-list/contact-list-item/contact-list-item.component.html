@@ -17,7 +17,7 @@
           <span>Kartta</span>
         </button>
         <mat-divider></mat-divider>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="remove.emit(contact)">
           <mat-icon>delete</mat-icon>
           <span>Poista</span>
         </button>

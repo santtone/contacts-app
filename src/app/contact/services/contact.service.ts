@@ -36,6 +36,12 @@ export class ContactService {
     return this.findContactById(contact.id);
   }
 
+  public deleteContact(id: number) {
+    const contacts = this.readLocalStorageContacts();
+    _.remove(contacts, {'id': id});
+    this.writeLocalStorageContacts(contacts);
+  }
+
   private getInitialContacts(): Contact[] {
     return [
       new Contact(1, 'Sami', 'Anttonen', '0123456789', 'Skinnarilankatu 35', 'Lappeenranta'),

@@ -11,10 +11,11 @@ import {RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
 import {CovalentLayoutModule} from '@covalent/core';
-import {caRoutes} from './config/route-config';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {ToolbarService} from './toolbar/toolbar.service';
 import { SettingsComponent } from './settings/settings.component';
+
+import {caRoutes} from './config/route-config';
 
 @NgModule({
   declarations: [
