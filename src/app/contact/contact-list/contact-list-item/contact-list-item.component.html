@@ -2,7 +2,7 @@
   <mat-list-item>
     <mat-icon matListAvatar class="ca-contact-list-item-avatar">face</mat-icon>
     <h3 matLine> {{contact.firstName}} {{contact.lastName}}</h3>
-    <p matLine> {{contact.streetAddress}}, {{contact.city}}</p>
+    <p matLine> {{contact | contactAddress}}</p>
     <div *ngIf="menuIsVisible">
       <button mat-icon-button [matMenuTriggerFor]="menu" (onMenuClose)="toggleMenuButtonVisibility(false)">
         <mat-icon>more_vert</mat-icon>
