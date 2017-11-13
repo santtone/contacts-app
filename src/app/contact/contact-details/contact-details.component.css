@@ -1,0 +1,21 @@
+.ca-contact-details-avatar{
+  font-size: 120px;
+  color: gray;
+}
+
+.ca-contact-details-icon{
+  color: #737373;
+  font-size: 26px;
+}
+
+.ca-contact-details-toolbar{
+  background: #ECEFF1;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+}
+
+.ca-contact-details-avatar-container{
+  background: #ECEFF1;
+  padding-bottom: 16px;
+}

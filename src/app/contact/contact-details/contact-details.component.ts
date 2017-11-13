@@ -35,4 +35,9 @@ export class ContactDetailsComponent implements OnInit {
     this.location.back();
   }
 
+  remove() {
+    this.contactService.deleteContact(this.contact.id);
+    this.location.back();
+  }
+
 }
