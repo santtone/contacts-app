@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
       this.smallScreenQuery
     ]).subscribe(result => {
       this.isSmallScreen = result.matches;
-      this.toggleSidenav();
     });
   }
 

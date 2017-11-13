@@ -35,4 +35,13 @@ export class ContactListComponent implements OnInit {
     this.router.navigate(['add-contact']);
   }
 
+  navigateToMap(contact: Contact) {
+    this.router.navigate(['map',
+      {
+        streetAddress: contact.streetAddress,
+        city: contact.city
+      }
+    ]);
+  }
+
 }

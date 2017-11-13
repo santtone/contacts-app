@@ -17,6 +17,9 @@ import { SettingsComponent } from './settings/settings.component';
 
 import {caRoutes} from './config/route-config';
 import { ContactAddressPipe } from './contact/pipes/contact-address.pipe';
+import { MapComponent } from './map/map.component';
+import { MapLayoutCardComponent } from './map/map-layout-card/map-layout-card.component';
+import { SafeUrlPipe } from './utils/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ContactAddressPipe } from './contact/pipes/contact-address.pipe';
     ContactDetailsComponent,
     ToolbarComponent,
     SettingsComponent,
-    ContactAddressPipe
+    ContactAddressPipe,
+    MapComponent,
+    MapLayoutCardComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+ <iframe *ngIf="streetAddress || city"
+          [src]="mapUrl | safeUrl"
+          width="100%" height="100%"
+          class="ca-map-frame">
+  </iframe>
+  <div class="ca-layout-card-content" *ngIf="!streetAddress && !city" fxFlexFill fxLayout="column" fxLayoutAlign="center center">
+    No Address Information
+  </div>

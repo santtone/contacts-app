@@ -12,7 +12,7 @@
           <mat-icon>call</mat-icon>
           <span>Soitto</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="showOnMap.emit(contact)">
           <mat-icon>place</mat-icon>
           <span>Kartta</span>
         </button>

@@ -4,7 +4,8 @@
       <ca-contact-list-item *ngFor="let contact of contacts"
                             [contact]="contact"
                             (select)="editContact(contact)"
-                            (remove)="deleteContact(contact)">
+                            (remove)="deleteContact(contact)"
+                            (showOnMap)="navigateToMap(contact)">
       </ca-contact-list-item>
     </mat-nav-list>
   </div>

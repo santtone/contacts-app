@@ -13,6 +13,8 @@ export class ContactListItemComponent implements OnInit {
   @Input() contact: Contact;
   @Output() select: EventEmitter<Contact>;
   @Output() remove: EventEmitter<Contact>;
+  @Output() showOnMap: EventEmitter<Contact>;
+
 
   @ViewChild(MatMenuTrigger) menuTrigger: MatMenuTrigger;
   menuIsVisible: boolean;
@@ -29,6 +31,7 @@ export class ContactListItemComponent implements OnInit {
     this.menuIsVisible = false;
     this.select = new EventEmitter();
     this.remove = new EventEmitter();
+    this.showOnMap = new EventEmitter();
   }
 
   ngOnInit() {
