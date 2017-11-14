@@ -14,10 +14,13 @@ export class ContactDetailsComponent implements OnInit {
 
   contact: Contact;
   isNewContact: boolean;
+  showMap: boolean;
 
-  constructor(private toolbar: ToolbarService, private route: ActivatedRoute, private contactService: ContactService, private location: Location) {
+  constructor(private toolbar: ToolbarService, private route: ActivatedRoute,
+              private contactService: ContactService, private location: Location) {
     this.contact = new Contact();
     this.isNewContact = true;
+    this.showMap = false;
   }
 
   ngOnInit() {

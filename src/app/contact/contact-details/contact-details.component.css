@@ -1,6 +1,6 @@
 .ca-contact-details-avatar{
   font-size: 120px;
-  color: gray;
+  color: #757575;
 }
 
 .ca-contact-details-icon{
@@ -9,13 +9,24 @@
 }
 
 .ca-contact-details-toolbar{
-  background: #ECEFF1;
+  background: #CFD8DC;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 16px;
 }
 
 .ca-contact-details-avatar-container{
-  background: #ECEFF1;
+  background: #CFD8DC;
   padding-bottom: 20px;
+}
+
+.ca-contact-details-map-container{
+  text-align: -webkit-center;
+}
+
+.ca-contact-details-map{
+  min-height: 300px;
+  height: 300px;
+  width: 100%;
+  max-width: 500px;
 }

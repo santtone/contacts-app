@@ -9,36 +9,40 @@
       <mat-icon class="ca-contact-details-avatar">face</mat-icon>
     </div>
     <div class="ca-layout-card-content">
-      <div fxLayout="row" fxFlex fxLayoutWrap fxLayoutAlign="center center">
-        <div>
-          <div fxLayout="column" fxFlexFill fxLayoutAlign="start center">
-            <mat-input-container floatPlaceholder="auto">
-              <input matInput [(ngModel)]="contact.firstName"
-                     type="text"
-                     required
-                     placeholder="First name">
-            </mat-input-container>
-            <mat-input-container floatPlaceholder="auto">
-              <input matInput [(ngModel)]="contact.lastName"
-                     type="text"
-                     required
-                     placeholder="Last name">
-            </mat-input-container>
-            <mat-input-container floatPlaceholder="auto">
-              <input matInput [(ngModel)]="contact.streetAddress"
-                     type="text"
-                     required
-                     placeholder="Street address">
-            </mat-input-container>
-            <mat-input-container floatPlaceholder="auto">
-              <input matInput [(ngModel)]="contact.city"
-                     type="text"
-                     required
-                     placeholder="City">
-            </mat-input-container>
+      <div fxLayout="column" fxFlexFill fxLayoutAlign="start center">
+        <mat-input-container floatPlaceholder="auto">
+          <input matInput [(ngModel)]="contact.firstName"
+                 type="text"
+                 required
+                 placeholder="First name">
+        </mat-input-container>
+        <mat-input-container floatPlaceholder="auto">
+          <input matInput [(ngModel)]="contact.lastName"
+                 type="text"
+                 required
+                 placeholder="Last name">
+        </mat-input-container>
+        <mat-input-container floatPlaceholder="auto">
+          <input matInput [(ngModel)]="contact.streetAddress"
+                 type="text"
+                 required
+                 placeholder="Street address">
+        </mat-input-container>
+        <mat-input-container floatPlaceholder="auto">
+          <input matInput [(ngModel)]="contact.city"
+                 type="text"
+                 required
+                 placeholder="City">
+        </mat-input-container>
+        <mat-slide-toggle [(ngModel)]="showMap" class="ca-padding">Kartta</mat-slide-toggle>
+        <div [tdToggle]="!showMap" fxFlexFill class="ca-contact-details-map-container">
+          <div class="ca-contact-details-map">
+            <ca-map class="ca-contact-details-map"
+                    [streetAddress]="contact.streetAddress"
+                    [city]="contact.city">
+            </ca-map>
           </div>
         </div>
-        <div style="height: 200px; width: 200px">Map comes here</div>
       </div>
     </div>
   </div>

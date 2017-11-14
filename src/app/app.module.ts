@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
@@ -10,7 +11,7 @@ import {ContactDetailsComponent} from './contact/contact-details/contact-details
 import {RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
-import {CovalentLayoutModule} from '@covalent/core';
+import {CovalentCommonModule, CovalentLayoutModule} from '@covalent/core';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {ToolbarService} from './toolbar/toolbar.service';
 import { SettingsComponent } from './settings/settings.component';
@@ -36,11 +37,13 @@ import { SafeUrlPipe } from './utils/safe-url.pipe';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(caRoutes),
     MaterialComponentsModule,
     FlexLayoutModule,
     FormsModule,
-    CovalentLayoutModule
+    CovalentLayoutModule,
+    CovalentCommonModule
   ],
   providers: [ContactService, ToolbarService],
   bootstrap: [AppComponent]
