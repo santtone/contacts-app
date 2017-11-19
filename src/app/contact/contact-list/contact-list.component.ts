@@ -44,4 +44,8 @@ export class ContactListComponent implements OnInit {
     ]);
   }
 
+  makePhoneCall(contact: Contact) {
+    document.location.href = 'tel:' + contact.phone;
+  }
+
 }

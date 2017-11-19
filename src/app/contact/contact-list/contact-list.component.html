@@ -1,11 +1,12 @@
 <td-layout-card-over cardWidth="80">
-  <div class="ca-layout-card-content">
+  <div class="ca-layout-card-content md-padding">
     <mat-nav-list>
       <ca-contact-list-item *ngFor="let contact of contacts"
                             [contact]="contact"
                             (select)="editContact(contact)"
                             (remove)="deleteContact(contact)"
-                            (showOnMap)="navigateToMap(contact)">
+                            (showOnMap)="navigateToMap(contact)"
+                            (call)="makePhoneCall(contact)">
       </ca-contact-list-item>
     </mat-nav-list>
   </div>

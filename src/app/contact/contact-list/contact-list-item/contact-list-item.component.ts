@@ -14,6 +14,7 @@ export class ContactListItemComponent implements OnInit {
   @Output() select: EventEmitter<Contact>;
   @Output() remove: EventEmitter<Contact>;
   @Output() showOnMap: EventEmitter<Contact>;
+  @Output() call: EventEmitter<Contact>;
 
 
   @ViewChild(MatMenuTrigger) menuTrigger: MatMenuTrigger;
@@ -32,6 +33,7 @@ export class ContactListItemComponent implements OnInit {
     this.select = new EventEmitter();
     this.remove = new EventEmitter();
     this.showOnMap = new EventEmitter();
+    this.call = new EventEmitter();
   }
 
   ngOnInit() {
