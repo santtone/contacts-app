@@ -24,6 +24,10 @@ namespace ContactsWebApi.Repositories
             return _contacts.FirstOrDefault(c => c.Id == id);
         }
 
+        public void Delete(Contact contact)
+        {
+        }
+
         private void Initialize()
         {
             _contacts = new List<Contact>

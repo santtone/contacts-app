@@ -3,7 +3,7 @@ import {Contact} from '../contact';
 import * as _ from 'lodash';
 
 @Injectable()
-export class ContactService {
+export class ContactLocalStorageService {
 
   localStorageKey: string;
 
