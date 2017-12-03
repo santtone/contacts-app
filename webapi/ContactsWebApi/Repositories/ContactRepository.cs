@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ContactsWebApi.Config;
 using ContactsWebApi.Models;
 
 namespace ContactsWebApi.Repositories
@@ -7,9 +8,11 @@ namespace ContactsWebApi.Repositories
     public class ContactRepository : IContactRepository
     {
         private List<Contact> _contacts;
+        private readonly ContactsDbContext _context;
 
-        public ContactRepository()
+        public ContactRepository(ContactsDbContext context)
         {
+            _context = context;
             _contacts = new List<Contact>();
             Initialize();
         }
