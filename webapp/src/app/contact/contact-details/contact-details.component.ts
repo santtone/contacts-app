@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {Contact} from '../contact';
 import {ActivatedRoute} from '@angular/router';
-import {ContactService} from '../services/contact.service';
+import {ContactLocalStorageService} from '../services/contact-local-storage.service';
 import {ToolbarService, ToolbarSettings} from '../../toolbar/toolbar.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class ContactDetailsComponent implements OnInit {
   showMap: boolean;
 
   constructor(private toolbar: ToolbarService, private route: ActivatedRoute,
-              private contactService: ContactService, private location: Location) {
+              private contactService: ContactLocalStorageService, private location: Location) {
     this.contact = new Contact();
     this.isNewContact = true;
     this.showMap = false;
