@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {ContactLocalStorageService} from './contact-local-storage.service';
 import {Contact} from '../contact';
 import {ContactHttpService} from './contact-http.service';
 import {Observable} from 'rxjs/Observable';
@@ -11,18 +10,18 @@ export class ContactService {
 
   private contacts: Contact[];
 
-  constructor(private localStorage: ContactLocalStorageService, private contactHttpService: ContactHttpService) {
+  constructor(private contactHttpService: ContactHttpService) {
     this.contacts = [];
   }
 
-  findContacts(reload?: boolean): Observable<Contact[]> {
+  public findContacts(reload?: boolean): Observable<Contact[]> {
     if (_.isEmpty(this.contacts) || reload) {
       return this.contactHttpService.get().map((contacts) => {
         this.contacts = contacts;
         return contacts;
       });
     } else {
-      Observable.of(this.contacts);
+      return Observable.of(this.contacts);
     }
   }
 
@@ -40,17 +39,21 @@ export class ContactService {
 
   saveContact(contact: Contact) {
     if (!contact.id) {
-      this.contactHttpService.create(contact).map(() => {
+      return this.contactHttpService.create(contact).map((contact) => {
         this.contacts.push(contact);
       });
     } else {
-      // TODO update
+      return this.contactHttpService.update(contact).map(() => {
+        const i = _.indexOf(this.contacts, {'id': contact.id});
+        this.contacts[i] = contact;
+      });
     }
-
   }
 
   deleteContact(id: number) {
-    // TODO
+    return this.contactHttpService.remove(id).map(() => {
+      _.remove(this.contacts, {'id': id});
+    });
   }
 
 }

@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Contact} from '../contact';
-import {ContactLocalStorageService} from '../services/contact-local-storage.service';
 import {Router} from '@angular/router';
 import {ToolbarService, ToolbarSettings} from '../../toolbar/toolbar.service';
 import {ContactService} from '../services/contact.service';
-import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'ca-contact-list',
