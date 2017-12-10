@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Contact} from '../contact';
-import {ContactService} from '../services/contact.service';
 import {Router} from '@angular/router';
 import {ToolbarService, ToolbarSettings} from '../../toolbar/toolbar.service';
+import {ContactService} from '../services/contact.service';
 
 @Component({
   selector: 'ca-contact-list',
@@ -18,8 +18,11 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contacts = this.contactService.findContacts();
     this.toolbar.toolbarSettings.next(new ToolbarSettings('Contacts'));
+
+    this.contactService.findContacts().subscribe((contacts: Contact[]) => {
+      this.contacts = contacts;
+    });
   }
 
   editContact(contact: Contact) {
@@ -28,7 +31,7 @@ export class ContactListComponent implements OnInit {
 
   deleteContact(contact: Contact) {
     this.contactService.deleteContact(contact.id);
-    this.contacts = this.contactService.findContacts();
+    // this.contacts = this.contactService.findContacts();
   }
 
   addContact() {
