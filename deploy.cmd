@@ -106,12 +106,16 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 )
 
 :: 4. Angular Build
-IF EXIST "%DEPLOYMENT_SOURCE%/.angular-cli.json" (
-echo Building App in %DEPLOYMENT_SOURCE%…
-pushd "%DEPLOYMENT_SOURCE%"
-call ./node_modules/.bin/ng build –prod
-IF !ERRORLEVEL! NEQ 0 goto error
-popd
+echo Handling Angular build
+echo Angular build command: %ANGULAR_BUILD_COMMAND%
+:: 4. Build ng app
+IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
+  pushd "%DEPLOYMENT_TARGET%"
+  call :ExecuteCmd "!NODE_EXE!" ./node_modules/@angular/cli/bin/%ANGULAR_BUILD_COMMAND%
+  echo Angular webapp built using command: %ANGULAR_BUILD_COMMAND%
+  call :ExecuteCmd cp "%DEPLOYMENT_TARGET%"/web.config "%DEPLOYMENT_TARGET%"/dist/
+  IF !ERRORLEVEL! NEQ 0 goto error
+  popd
 )
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
