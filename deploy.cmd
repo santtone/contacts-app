@@ -100,7 +100,7 @@ call :SelectNodeVersion
 :: 3. Install npm packages
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd !NPM_CMD! install --production
+  call :ExecuteCmd !NPM_CMD! install
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
@@ -113,7 +113,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
   call :ExecuteCmd "!NODE_EXE!" ./node_modules/@angular/cli/bin/%ANGULAR_BUILD_COMMAND%
   echo Angular webapp built using command: %ANGULAR_BUILD_COMMAND%
-  call :ExecuteCmd cp "%DEPLOYMENT_TARGET%"/web.config "%DEPLOYMENT_TARGET%"/dist/
+  call :ExecuteCmd cp "%DEPLOYMENT_SOURCE%"/web.config "%DEPLOYMENT_TARGET%"/dist/
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
