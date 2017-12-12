@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^4.4.3",
     "@angular/platform-browser-dynamic": "^4.4.3",
     "@angular/router": "^4.4.3",
-    "@covalent/core": "^1.0.0-beta.8-1",
+    "@covalent/core": "1.0.0-beta.8-1",
     "@types/lodash": "^4.14.83",
     "core-js": "^2.4.1",
     "lodash": "^4.17.4",

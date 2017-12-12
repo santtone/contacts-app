@@ -2,6 +2,7 @@
 using System.Linq;
 using ContactsWebApi.Config;
 using ContactsWebApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContactsWebApi.Repositories
 {
@@ -16,12 +17,12 @@ namespace ContactsWebApi.Repositories
 
         public List<Contact> Get()
         {
-            return _context.Contacts.ToList();
+            return _context.Contacts.AsNoTracking().ToList();
         }
 
         public Contact Get(int id)
         {
-            return _context.Contacts.FirstOrDefault(c => c.Id == id);
+            return _context.Contacts.AsNoTracking().FirstOrDefault(c => c.Id == id);
         }
 
         public Contact Create(Contact contact)

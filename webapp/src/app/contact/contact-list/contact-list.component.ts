@@ -19,10 +19,7 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit() {
     this.toolbar.toolbarSettings.next(new ToolbarSettings('Contacts'));
-
-    this.contactService.findContacts().subscribe((contacts: Contact[]) => {
-      this.contacts = contacts;
-    });
+    this.findContacts();
   }
 
   editContact(contact: Contact) {
@@ -30,8 +27,9 @@ export class ContactListComponent implements OnInit {
   }
 
   deleteContact(contact: Contact) {
-    this.contactService.deleteContact(contact.id);
-    // this.contacts = this.contactService.findContacts();
+    this.contactService.deleteContact(contact.id).subscribe(() => {
+      this.findContacts();
+    });
   }
 
   addContact() {
@@ -49,6 +47,12 @@ export class ContactListComponent implements OnInit {
 
   makePhoneCall(contact: Contact) {
     document.location.href = 'tel:' + contact.phone;
+  }
+
+  private findContacts() {
+    this.contactService.findContacts().subscribe((contacts: Contact[]) => {
+      this.contacts = contacts;
+    });
   }
 
 }

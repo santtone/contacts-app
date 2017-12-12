@@ -37,20 +37,21 @@ export class ContactService {
     }
   }
 
-  saveContact(contact: Contact) {
+  saveContact(contact: Contact): Observable<any> {
     if (!contact.id) {
-      return this.contactHttpService.create(contact).map((contact) => {
-        this.contacts.push(contact);
+      return this.contactHttpService.create(contact).map((c) => {
+        this.contacts.push(c);
       });
     } else {
       return this.contactHttpService.update(contact).map(() => {
         const i = _.indexOf(this.contacts, {'id': contact.id});
         this.contacts[i] = contact;
+        return contact;
       });
     }
   }
 
-  deleteContact(id: number) {
+  deleteContact(id: number): Observable<any> {
     return this.contactHttpService.remove(id).map(() => {
       _.remove(this.contacts, {'id': id});
     });
