@@ -23,7 +23,8 @@ import {MapLayoutCardComponent} from './map/map-layout-card/map-layout-card.comp
 import {SafeUrlPipe} from './utils/safe-url.pipe';
 import {ContactService} from './contact/services/contact.service';
 import {ContactHttpService} from './contact/services/contact-http.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {CaHttpInterceptor} from './utils/ca-http-interceptor';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {HttpClientModule} from '@angular/common/http';
     ContactService,
     ContactHttpService,
     ContactLocalStorageService,
-    ToolbarService
+    ToolbarService,
+    { provide: HTTP_INTERCEPTORS, useClass: CaHttpInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
