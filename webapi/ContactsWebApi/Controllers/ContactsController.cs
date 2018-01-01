@@ -1,9 +1,11 @@
 ﻿using ContactsWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using ContactsWebApi.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ContactsWebApi.Controllers
 {
+    [Authorize]
     [Route("api/contacts")]
     public class ContactsController : Controller
     {
