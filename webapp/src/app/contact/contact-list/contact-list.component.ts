@@ -23,7 +23,7 @@ export class ContactListComponent implements OnInit {
   }
 
   editContact(contact: Contact) {
-    this.router.navigate(['contacts', contact.id]);
+    this.router.navigate(['ca/contacts', contact.id]);
   }
 
   deleteContact(contact: Contact) {
@@ -33,11 +33,11 @@ export class ContactListComponent implements OnInit {
   }
 
   addContact() {
-    this.router.navigate(['add-contact']);
+    this.router.navigate(['ca/add-contact']);
   }
 
   navigateToMap(contact: Contact) {
-    this.router.navigate(['map',
+    this.router.navigate(['ca/map',
       {
         streetAddress: contact.streetAddress,
         city: contact.city

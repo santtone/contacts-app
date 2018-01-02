@@ -9,6 +9,10 @@
                             (call)="makePhoneCall(contact)">
       </ca-contact-list-item>
     </mat-nav-list>
+    <div *ngIf="!contacts.length" fxLayout="column" fxLayoutAlign="center center">
+      <mat-icon class="ca-no-contacts-icon">contacts</mat-icon>
+      <div class="ca-no-contacts-text">No Contacts</div>
+    </div>
   </div>
 </td-layout-card-over>
 <button mat-fab (click)="addContact()" color="accent" class="ca-floating-action-button">

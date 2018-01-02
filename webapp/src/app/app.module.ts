@@ -23,9 +23,12 @@ import {MapLayoutCardComponent} from './map/map-layout-card/map-layout-card.comp
 import {SafeUrlPipe} from './utils/safe-url.pipe';
 import {ContactService} from './contact/services/contact.service';
 import {ContactHttpService} from './contact/services/contact-http.service';
-import {HttpClientModule} from '@angular/common/http';
-import { LoginComponent } from './user/login/login.component';
-import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {LoginComponent} from './user/login/login.component';
+import {AppLayoutComponent} from './layout/app-layout/app-layout.component';
+import {UserService} from './user/services/user.service';
+import {AuthenticationService} from './user/services/authentication.service';
+import {CaHttpInterceptor} from './config/ca-http-interceptor';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,14 @@ import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
     ContactService,
     ContactHttpService,
     ContactLocalStorageService,
-    ToolbarService
+    ToolbarService,
+    UserService,
+    AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CaHttpInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

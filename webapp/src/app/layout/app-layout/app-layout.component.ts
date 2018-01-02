@@ -34,10 +34,10 @@ export class AppLayoutComponent implements OnInit {
   }
 
   navigateToContacts() {
-    this.router.navigate(['/contacts']);
+    this.router.navigate(['ca/contacts']);
   }
 
   navigateToSettings() {
-    this.router.navigate(['/settings']);
+    this.router.navigate(['ca/settings']);
   }
 }
