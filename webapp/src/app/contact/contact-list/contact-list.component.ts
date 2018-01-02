@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Contact} from '../contact';
 import {Router} from '@angular/router';
-import {ToolbarService, ToolbarSettings} from '../../toolbar/toolbar.service';
+import {ToolbarService, ToolbarSettings} from '../../layout/toolbar/toolbar.service';
 import {ContactService} from '../services/contact.service';
 
 @Component({

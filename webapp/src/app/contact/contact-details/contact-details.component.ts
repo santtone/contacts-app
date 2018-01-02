@@ -3,7 +3,7 @@ import {Location} from '@angular/common';
 import {Contact} from '../contact';
 import {ActivatedRoute} from '@angular/router';
 import {ContactLocalStorageService} from '../services/contact-local-storage.service';
-import {ToolbarService, ToolbarSettings} from '../../toolbar/toolbar.service';
+import {ToolbarService, ToolbarSettings} from '../../layout/toolbar/toolbar.service';
 import {ContactService} from '../services/contact.service';
 
 @Component({

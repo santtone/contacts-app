@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ToolbarService, ToolbarSettings} from '../../toolbar/toolbar.service';
+import {ToolbarService, ToolbarSettings} from '../../layout/toolbar/toolbar.service';
 
 @Component({
   selector: 'ca-map-layout-card',

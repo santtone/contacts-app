@@ -12,8 +12,8 @@ import {RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
 import {CovalentCommonModule, CovalentLayoutModule} from '@covalent/core';
-import {ToolbarComponent} from './toolbar/toolbar.component';
-import {ToolbarService} from './toolbar/toolbar.service';
+import {ToolbarComponent} from './layout/toolbar/toolbar.component';
+import {ToolbarService} from './layout/toolbar/toolbar.service';
 import {SettingsComponent} from './settings/settings.component';
 
 import {caRoutes} from './config/route-config';
@@ -24,6 +24,8 @@ import {SafeUrlPipe} from './utils/safe-url.pipe';
 import {ContactService} from './contact/services/contact.service';
 import {ContactHttpService} from './contact/services/contact-http.service';
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './user/login/login.component';
+import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {HttpClientModule} from '@angular/common/http';
     ContactAddressPipe,
     MapComponent,
     MapLayoutCardComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    LoginComponent,
+    AppLayoutComponent
   ],
   imports: [
     BrowserModule,
